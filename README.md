@@ -1,0 +1,3 @@
+# admin-dashboard
+
+- browser capabilities

@@ -1,0 +1,73 @@
+@charset "UTF-8";
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  @extend .d-flex;
+}
+
+.page-dashboard {
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .flex-grow-1; // なんでいるんだろう？ -> body には明示的に 100% があるけどこれにはない。なので container の中で最大に大きくする
+  @extend .overflow-hidden;
+}
+
+.page-dashboard-header {
+  @extend .d-flex;
+  @extend .flex-row;
+  @extend .navbar;
+
+  background: #202428;
+}
+
+.page-dashboard-body {
+  @extend .d-flex;
+  @extend .flex-row;
+  @extend .flex-grow-1; // Header が固定で残りを全部 body にしたいから
+  @extend .overflow-hidden; // because of flow-grow?
+}
+
+.page-dashboard-aside {
+  @extend .d-flex;
+  @extend .flex-column;
+  // @extend .overflow-hidden;
+
+  width: 220px;
+  // border-right: 1px solid #e1e4e8;
+  // background: #f9f9f9;
+}
+
+.page-dashboard-aside-header {
+  @extend .d-flex;
+  @extend .flex-row;
+  @extend .flex-shrink-0;
+  @extend .align-items-center;
+
+  // border-bottom: 1px solid #e1e4e8;
+}
+
+.page-dashboard-aside-body {
+  @extend .d-flex;
+  @extend .flex-grow-1;
+
+  overflow-y: scroll;
+}
+
+.page-dashboard-aside-footer {
+  @extend .d-flex;
+  @extend .flex-row;
+  @extend .flex-shrink-0;
+  @extend .align-items-center;
+
+  // border-top: 1px solid #e1e4e8;
+}
+
+.page-dashboard-main {
+  @extend .d-flex;
+  @extend .flex-grow-1;
+}
